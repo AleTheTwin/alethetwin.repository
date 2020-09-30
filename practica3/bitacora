@@ -10,3 +10,5 @@ Resumen de comandos básicos git
     git push
 5. Obtener cambios del repositorio remoto
     git pull
+6. Obtener los cambios del repositorio local
+    git status
