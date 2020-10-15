@@ -30,9 +30,19 @@ public class App
 
 
         get("/", (req, res) -> "Hola desde Spark");
-        get("/hola", (req, res) -> "Hola hola");
+        get("/hola", (req, res) -> {
+            System.out.println("Request: " + req.queryParams());
+            System.out.println("Request: " + req.queryParams("PrmEmail"));
+            System.out.println("Request: " + req.queryParams("PrmPassword"));
+            System.out.println("Request: " + req.body());
+            return "Hola " + req.queryParams("PrmEmail") + " desde spark";
+        });
         post("/adios", (req, res) -> {
-            return null;
-        )}
+            System.out.println("Request: " + req.body());
+            System.out.println("Request: " + req.queryParams("PrmEmail"));
+            System.out.println("Request: " + req.queryParams("PrmPassword"));
+
+            return "Hola " + req.queryParams("PrmEmail") + " desde spark";
+        });
     }
 }

@@ -15,7 +15,7 @@ blogeo.addEventListener("click", function() {
     //.catch(function(error) {
     //    console.log(error)
     //})
-    axios.get("http://192.168.0.20/hola?" + parametros)
+    axios.post("http://192.168.0.20/adios?" + parametros)
     .then(function(response) {
         console.log(response);
         console.log("contenido: " + response.data);
