@@ -2,6 +2,10 @@ package mx.uv.sw80640;
 
 import static spark.Spark.*;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 /**
  * Hello world!
  *
@@ -35,14 +39,30 @@ public class App
             System.out.println("Request: " + req.queryParams("PrmEmail"));
             System.out.println("Request: " + req.queryParams("PrmPassword"));
             System.out.println("Request: " + req.body());
+            System.out.println("Request: " + req.contentType());
             return "Hola " + req.queryParams("PrmEmail") + " desde spark";
         });
         post("/adios", (req, res) -> {
             System.out.println("Request: " + req.body());
             System.out.println("Request: " + req.queryParams("PrmEmail"));
             System.out.println("Request: " + req.queryParams("PrmPassword"));
+            System.out.println("Request: " + req.body());
+            System.out.println("Request: " + req.contentType());
 
             return "Hola " + req.queryParams("PrmEmail") + " desde spark";
         });
+
+       /*  post("/adiosJason", (req, res) -> {
+            JsonParser parser = new JasonParser();
+            JsonElement arbol = parser.parse(req.body());
+            JsonObject peticion = arbol.getAsJsonObject();
+
+            System.out.println("Request: " + peticion.get("PrmEmail"));
+            System.out.println("Request: " + peticion.get("PrmPassword"));
+            System.out.println("Request: " + req.body());
+            System.out.println("Request: " + req.contentType());
+
+            return "Hola " + peticion.get("PrmEmail") + " desde spark";
+        }); */
     }
 }
