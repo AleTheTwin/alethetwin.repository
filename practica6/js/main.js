@@ -17,7 +17,10 @@ blogeo.addEventListener("click", function() {
     }) */
 
     //Se hace la petición a través de POST enviando parámetros como pate de la url
-    axios.post('http://192.168.0.11/adios', parametros)
+    axios.post('http://192.168.0.11/usuarios',  {
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value
+    })
     .then(function(response) {
         console.log(response);
         console.log("contenido: " + response.data);

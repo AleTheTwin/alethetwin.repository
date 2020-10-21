@@ -52,8 +52,8 @@ public class App
             return "Hola " + req.queryParams("PrmEmail") + " desde spark";
         });
 
-       /*  post("/adiosJason", (req, res) -> {
-            JsonParser parser = new JasonParser();
+        post("/adiosJason", (req, res) -> {
+            JsonParser parser = new JsonParser();
             JsonElement arbol = parser.parse(req.body());
             JsonObject peticion = arbol.getAsJsonObject();
 
@@ -63,6 +63,6 @@ public class App
             System.out.println("Request: " + req.contentType());
 
             return "Hola " + peticion.get("PrmEmail") + " desde spark";
-        }); */
+        });
     }
 }
