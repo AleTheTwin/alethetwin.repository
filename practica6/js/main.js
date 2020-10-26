@@ -31,3 +31,32 @@ blogeo.addEventListener("click", function() {
         console.log(error)
     })
 })
+
+var bUpdate = document.getElementById("updateUser");
+bUpdate.addEventListener("click", function() {
+    var password = document.getElementById("updatePasswordInput").value;
+    var email = document.getElementById("updateEmailImput").value;
+    var newEmail = document.getElementById("updateNewEmailInput").value;
+    var newPassword = document.getElementById("updateNewPasswordInput").value;
+    axios.post('http://192.168.0.11/update',  {
+        email:document.getElementById("updateEmailImput").value,
+        password: password,
+        newEmail: newEmail,
+        newPassword: newPassword
+    })
+    .then(function(response) {
+        console.log(response);
+        console.log("contenido: " + response.data);
+        console.log("status: " + response.status);
+        document.getElementById("titulo").innerHTML = response.data;
+    })
+    .catch(function(error) {
+        console.log(error)
+    })
+
+
+    
+})
+
+var bCreate = document.getElementById("createUser");
+var bDelete = document.getElementById("deleteUser");

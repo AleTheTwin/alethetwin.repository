@@ -1,10 +1,9 @@
 package com.mycompany.app;
 
 import static spark.Spark.*;
-import java.util.HashMap;
-import java.util.Map;
+
 import java.util.UUID;
-import java.util.*;
+
 import com.google.gson.Gson;
 
 public class AppDB {
@@ -30,15 +29,29 @@ public class AppDB {
         get("/usuarios",(req,res)->gson.toJson(DAO.getUsuarios()));
 
 
-       /*  post("/usuarios",(req,res)->{
+        post("/usuarios",(req,res)->{
             String query = req.body();
             System.out.println("1Peticion: "+query);
-            Usuarios usuario=gson.fromJson(query,Usuarios.class);
-            String id=usuario.getEmail()+"ID";
+            Usuario usuario=gson.fromJson(query,Usuario.class);
+            String id = UUID.randomUUID().toString();
             usuario.setId(id);
-            DAO.addUsuario(usuario.getId(),usuario.getEmail(),usuario.getContrasena());
-            return "Se creo Usuario: "+id;
-        }); */
+           // return DAO.createUsuario(usuario);
+           // return DAO.deleteUsuario(new Usuario("001", "", ""));
+            return DAO.updateUsuario(new Usuario("002", "", ""), usuario);
+        }); 
+
+        post("/update",(req,res)->{
+            String query = req.body();
+            System.out.println(req.queryParams(query));
+            System.out.println(req.queryParams("email"));
+            //Usuario usuario=gson.fromJson(query,Usuario.class);
+            String id = UUID.randomUUID().toString();
+           // usuario.setId(id);
+           // return DAO.createUsuario(usuario);
+           // return DAO.deleteUsuario(new Usuario("001", "", ""));
+            //return DAO.updateUsuario(new Usuario("002", "", ""), usuario);
+            return "si se pudo";
+        }); 
         
         
     }

@@ -33,7 +33,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">Sistemas web</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form" action="" method="POST">
@@ -44,15 +44,106 @@
               <input type="password" placeholder="Password" class="form-control" id="password">
             </div>
             <button type="button" class="btn btn-success" id="signin">Sign in</button>
+            <!--dropdown-->
+            <div class="btn-group">
+              <button class="btn btn-danger btn-group-vertical btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+                Otras opciones
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" data-toggle="modal" data-target="#exampleModal" href="#">Actualizar usuario</a>
+                <a class="dropdown-item" id="deleteUser" data-toggle="modal" data-target="#deleteModal" href="#">Eliminar usuario</a>
+                <a class="dropdown-item" id="createUser" data-toggle="modal" data-target="#exampleModal" href="#">Crear Usuario</a>
+              </div>
+            </div>
+            
+            <!--dropdown-->
           </form>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
+    <!--modal update-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Actualizar Usuario</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Correo electrónico</label>
+                <input type="text" placeholder="Email" class="form-control" id="updateEmailImput">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Contraseña</label>
+                <input type="password" class="form-control" id="updatePasswordInput">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Correo nuevo</label>
+                <input type="email" class="form-control" id="updateNewEmailInput" aria-describedby="emailHelp">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Nueva Contraseña</label>
+                <input type="password" class="form-control" id="updateNewPasswordInput">
+              </div>
+              <button type="submit" class="btn btn-primary" id="updateUser">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--modal update-->
+    <!--modal delete-->
+    <div class="modal" tabindex="-1" id="#deleteModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--modal delete-->
+    <!--modal create-->
+    <div class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--modal create-->
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1 id="titulo">Hello, world!</h1>
+        <h1 id="titulo">Hola, mundo!</h1>
         <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
       </div>

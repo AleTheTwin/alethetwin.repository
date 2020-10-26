@@ -35,6 +35,7 @@ public class App {
 
         //comienza código
         before((req, res) -> res.type("application/json"));
+        get("/hola", (req, res) -> "Hola desde Spark");
         get("/usuarios", (req, res) -> gson.toJson(usuariosMap.values()));
         post("/usuarios", (req, res) -> {
             String query = req.body();
@@ -43,6 +44,20 @@ public class App {
             String id = UUID.randomUUID().toString();
             usuario.setId(id);
             usuariosMap.put(id, usuario);
+            return "Se creo el usuario con id: " + id;
+        });
+
+       
+
+        System.out.println( "Hello World!" );
+    }
+}
+req.body();
+            System.out.println( "peticion: " + query);
+            Usuario usuario = gson.fromJson(query, Usuario.class);
+            String id = UUID.randomUUID().toString();
+            usuario.setId(id);
+            //usuariosMap.put(id, usuario);
             return "Se creo el usuario con id: " + id;
         });
 
