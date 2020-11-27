@@ -1,0 +1,18 @@
+#set($message = "Velocity")
+<h1>$hello</h1>
+<h2>$person</h2>
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Spark & Velocity </title>
+    <meta name="viewport" content="width=device-width, initial -scale=1">
+</head>
+<body>
+    <section id="velocity">
+    #parse("hello.vm")
+    </section>
+    $hello
+    $person
+</body>
+</html>

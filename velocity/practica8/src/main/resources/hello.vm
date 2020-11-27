@@ -1,0 +1,4 @@
+#set($message = "Velocity")
+<h1>$hello</h1>
+<p>Hola</p>
+<h2>$person</h2>
