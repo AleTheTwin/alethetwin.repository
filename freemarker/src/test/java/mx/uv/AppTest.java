@@ -1,4 +1,4 @@
-package xm.uv;
+package mx.uv;
 
 import org.junit.jupiter.api.Test;
 
